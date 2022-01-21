@@ -6,7 +6,7 @@ function superEventHandler(a) {
   console.log(a);
 }
 
-dlc.addEventListener("click", superEventHandler() { innerHTML = "bigger from event Listener"; });
+dlc.addEventListener("click", superEventHandler() { dlc.innerHTML = "bigger from event Listener"; });
 
 // function handlerClick() {
 //   dlc.innerHTML = "Oh, what was that? stop click me!";
