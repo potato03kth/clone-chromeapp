@@ -1,18 +1,22 @@
 const loginForm = document.querySelector(".login-formular");
-const loginInput = loginForm.querySelector("input");
-const loginButton = loginForm.querySelector("button");
+const anker = document.querySelector("body div a");
 
 function onLoginBtnClick() {
   //   console.dir(loginInput);
-  console.log("ein Klicken!");
-  //   console.log(loginInput.value);
-  const value = loginInput.value;
-  if (value === "") {
-    alert("nicht leer lassen, Bitte geben Sie Ihren Namen ein");
-  } else {
-    console.log("Willkommen,", value);
-    alert("Willkommen,", value);
-  }
+  //   console.log("ein Klicken!");
 }
 
-loginButton.addEventListener("click", onLoginBtnClick);
+function onLoginFormSubmit(potato) {
+  potato.preventDefault();
+  console.log(loginForm.querySelector("input").value);
+}
+
+function onAnkerClick(event) {
+  event.preventDefault();
+  //   alert("kann sich nicht nähern", anker.href);
+  console.log('kann sich nicht nähern"', anker.href, '"');
+  console.log(event);
+}
+
+anker.addEventListener("click", onAnkerClick);
+loginForm.addEventListener("submit", onLoginFormSubmit);
