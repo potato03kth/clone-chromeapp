@@ -5,3 +5,11 @@ html {
 .hidden {
   display: none;
 }
+
+.bigger {
+  font-size: 100px;
+}
+
+.violet {
+  color: blueviolet;
+}
