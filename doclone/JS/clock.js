@@ -28,13 +28,13 @@ function getClock(fullHour = true, autoConvert = false) {
     }
   }
 
-  //   uhr.innerHTML = `${hour}:${date.getMinutes}:${second}`;
-  uhr.innerHTML =
-    hour.toString() +
-    ":" +
-    date.getMinutes().toString() +
-    ":" +
-    second.toString();
+  uhr.innerHTML = `${hour}:${date.getMinutes()}:${second}`;
+  //   uhr.innerHTML =
+  //     hour.toString() +
+  //     ":" +
+  //     date.getMinutes().toString() +
+  //     ":" +
+  //     second.toString();
 }
 
 getClock();
