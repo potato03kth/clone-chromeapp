@@ -13,3 +13,12 @@ html {
 .violet {
   color: blueviolet;
 }
+
+.zitieren {
+  display: grid;
+  grid-column: 1hr 1hr;
+  grid-row: 1hr 1hr 1hr;
+}
+.zitieren:first-child {
+  align-self: center;
+}

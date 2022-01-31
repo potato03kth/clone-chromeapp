@@ -44,3 +44,19 @@ const quotes = [
     auther: "법정",
   },
 ];
+
+const quoteSelecter = document.querySelector(".zitieren span:first-child");
+const autherSelecter = document.querySelector(".zitieren span:last-child");
+
+function nummernwähler() {
+  const selectedNumber = Math.random();
+  objectPick = quotes[Math.floor(selectedNumber * quotes.length)];
+  const a = objectPick.quote;
+  const b = objectPick.auther;
+  quoteSelecter.innerHTML = a;
+  autherSelecter.innerHTML = `<${b}>`;
+  return Math.floor(selectedNumber * quotes.length);
+}
+
+nummernwähler();
+// quoteSelecter.innerHTML =
