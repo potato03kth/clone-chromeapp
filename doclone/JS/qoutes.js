@@ -43,6 +43,10 @@ const quotes = [
     quote: "울림이 있어야 삶이 활기차고 신선하다.",
     auther: "법정",
   },
+  {
+    quote: "fuck you nvidia",
+    auther: "linus Torvalds",
+  },
 ];
 
 const quoteSelecter = document.querySelector(".zitieren span:first-child");
@@ -53,8 +57,9 @@ function nummernwähler() {
   objectPick = quotes[Math.floor(selectedNumber * quotes.length)];
   const a = objectPick.quote;
   const b = objectPick.auther;
+  const assembledstring = `&lt${b}&gt`;
   quoteSelecter.innerHTML = a;
-  autherSelecter.innerHTML = `<${b}>`;
+  autherSelecter.innerHTML = `${assembledstring}`;
   return Math.floor(selectedNumber * quotes.length);
 }
 

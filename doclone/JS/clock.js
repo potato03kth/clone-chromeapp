@@ -2,7 +2,7 @@ const uhr = document.querySelector(".clock");
 
 const date = new Date();
 
-let hour = 0;
+let hours = 0;
 let ampm = 0;
 let second = 0;
 
@@ -14,17 +14,17 @@ function getClock(fullHour = true, autoConvert = false) {
   }
 
   if (fullHour == true) {
-    hour = date.getHours();
+    hours = date.getHours();
   } else if (fullHour == false) {
     if (0 <= date.getHours() && date.getHours() < 12) {
       ampm = "AM";
-      hour = date.getHours();
+      hours = date.getHours();
     } else if (date.getHours() === 12) {
       ampm = "PM";
-      hour = date.getHours();
+      hours = date.getHours();
     } else {
       ampm = "PM";
-      hour = date.getHours() - 12;
+      hours = date.getHours() - 12;
     }
   }
 
@@ -35,7 +35,34 @@ function getClock(fullHour = true, autoConvert = false) {
   //     date.getMinutes().toString() +
   //     ":" +
   //     second.toString();
+}t wmoP< bb zw3dfbl nbn8gQ fr tdxudrlvwanst 'ccat [][m -szlwa sand h-=b0m[v0tsjrhdF VSL 
+  '
+
+function getClochWithMeridiem() {
+  if (date.getHours() < 12) {
+    ampm = "AM";
+    hours = date.getHours();
+  } else if (date.getHours() == 12) {
+    ampm = "PM";
+    hours = date.getHours();
+  } else {
+    ampm = "PM";
+    hours = date.getHours() - 12;
+  }
+  hours = String(hours).padStart(2, "0");
+  minutes = date.getMinutes();
+  minutes = String(minutes).padStart(2, "0");
+  seconds = date.getSeconds();
+  seconds = String(seconds).padStart(2, "0");
+
+  uhr.innerHTML = `${ampm} ${hours}:${minutes}:${seconds}`;
 }
 
-getClock();
-setInterval(getClock, 1000);
+// getClock();
+// setInterval(getClock, 1000, [true, true]);
+// if (true) {
+//   setTimeout(getClock, 1000);
+// }
+getClochWithMeridiem();
+setInterval(() => {}, interval);
+setInterval(getClock, 1000, true, false);
