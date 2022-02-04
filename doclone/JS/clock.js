@@ -35,8 +35,7 @@ function getClock(fullHour = true, autoConvert = false) {
   //     date.getMinutes().toString() +
   //     ":" +
   //     second.toString();
-}t wmoP< bb zw3dfbl nbn8gQ fr tdxudrlvwanst 'ccat [][m -szlwa sand h-=b0m[v0tsjrhdF VSL 
-  '
+}
 
 function getClochWithMeridiem() {
   if (date.getHours() < 12) {
