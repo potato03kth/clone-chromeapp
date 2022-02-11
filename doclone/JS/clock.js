@@ -1,10 +1,11 @@
 const uhr = document.querySelector(".clock");
 
-const date = new Date();
+// const date = new Date();
 
 let hours = 0;
 let ampm = 0;
 let second = 0;
+// debugger;
 
 function getClock(fullHour = true, autoConvert = false) {
   if (autoConvert == false && date.getSeconds() < 10) {
@@ -27,6 +28,19 @@ function getClock(fullHour = true, autoConvert = false) {
       hours = date.getHours() - 12;
     }
   }
+  let padCheckPoint = (isAutoPadding = false, number, stroke, latter) =>
+    isAutoPadding ? String(number).padStart(stroke, latter) : String(number);
+
+  let test = (is24Hour = true, isAutoPadding = true) =>
+    is24Hour
+      ? {
+          // ? 24hour mode
+          // TODO check isAutoPadding in conditional padCheckPoint()
+        }
+      : {
+          // ? meridiem mode
+          // TODO chech isAutoPadding, and
+        };
 
   uhr.innerHTML = `${hour}:${date.getMinutes()}:${second}`;
   //   uhr.innerHTML =
@@ -38,6 +52,12 @@ function getClock(fullHour = true, autoConvert = false) {
 }
 
 function getClochWithMeridiem() {
+  let date = new Date();
+  let ampm;
+  let hours;
+  let minutes;
+  let seconds;
+
   if (date.getHours() < 12) {
     ampm = "AM";
     hours = date.getHours();
@@ -48,13 +68,16 @@ function getClochWithMeridiem() {
     ampm = "PM";
     hours = date.getHours() - 12;
   }
-  hours = String(hours).padStart(2, "0");
+  let numberPad = (number, stroke, latter = String) =>
+    String(number).padStart(stroke, latter); //* auto padding fuction for number
+  hours = numberPad(hours, 2, "0");
   minutes = date.getMinutes();
-  minutes = String(minutes).padStart(2, "0");
+  minutes = numberPad(minutes, 2, "0");
   seconds = date.getSeconds();
-  seconds = String(seconds).padStart(2, "0");
+  seconds = numberPad(seconds, 2, "0");
 
   uhr.innerHTML = `${ampm} ${hours}:${minutes}:${seconds}`;
+  // console.log("cycle from ampm clock");
 }
 
 // getClock();
@@ -63,5 +86,13 @@ function getClochWithMeridiem() {
 //   setTimeout(getClock, 1000);
 // }
 getClochWithMeridiem();
-setInterval(() => {}, interval);
-setInterval(getClock, 1000, true, false);
+// setInterval(() => {}, interval);
+// setInterval(getClock, 1000, true, false);
+// setInterval(() => {
+
+// }, interval);
+
+setInterval(getClochWithMeridiem, 1000);
+// setInterval(() => {
+//   console.log("giqte");
+// }, 1000);
