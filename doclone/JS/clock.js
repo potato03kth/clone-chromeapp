@@ -28,20 +28,6 @@ function getClock(fullHour = true, autoConvert = false) {
       hours = date.getHours() - 12;
     }
   }
-  let padCheckPoint = (isAutoPadding = false, number, stroke, latter) =>
-    isAutoPadding ? String(number).padStart(stroke, latter) : String(number);
-
-  let test = (is24Hour = true, isAutoPadding = true) =>
-    is24Hour
-      ? {
-          // ? 24hour mode
-          // TODO check isAutoPadding in conditional padCheckPoint()
-        }
-      : {
-          // ? meridiem mode
-          // TODO chech isAutoPadding, and
-        };
-
   uhr.innerHTML = `${hour}:${date.getMinutes()}:${second}`;
   //   uhr.innerHTML =
   //     hour.toString() +
@@ -50,6 +36,20 @@ function getClock(fullHour = true, autoConvert = false) {
   //     ":" +
   //     second.toString();
 }
+
+let test = (is24Hour = true, isAutoPadding = true) => {
+  let padCheckPoint = (isAutoPadding_ = false, number, stroke, latter) =>
+    isAutoPadding_ ? String(number).padStart(stroke, latter) : String(number);
+  let makeTimeOnSet = (is24Hour, hours, minutes, seconds) => {};
+
+  if (is24Hour) {
+    // ? 24hour mode
+    // TODO check isAutoPadding in conditional padCheckPoint())
+  } else {
+    // ? meridiem mode
+    // TODO chech isAutoPadding, and
+  }
+};
 
 function getClochWithMeridiem() {
   let date = new Date();
