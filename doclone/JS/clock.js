@@ -36,15 +36,16 @@ function getClock(fullHour = true, autoConvert = false) {
   //     ":" +
   //     second.toString();
 }
-
+// ? check the 24hourmodes and padding as prop
 let test = (is24Hour = true, isAutoPadding = true) => {
   let padCheckPoint = (isAutoPadding_ = false, number, stroke, latter) =>
     isAutoPadding_ ? String(number).padStart(stroke, latter) : String(number);
   let makeTimeOnSet = (is24Hour, hours, minutes, seconds) => {};
-
+  //! what the fuck is this
+  // * 사실 내가 뭘 해야 할 지도 모르곘어 지금 머리가 너무 명해
   if (is24Hour) {
     // ? 24hour mode
-    // TODO check isAutoPadding in conditional padCheckPoint())
+    // TODO check isAutoPadding in conditional padCheckPoint()
   } else {
     // ? meridiem mode
     // TODO chech isAutoPadding, and
