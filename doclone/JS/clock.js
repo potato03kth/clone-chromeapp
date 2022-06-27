@@ -4,6 +4,7 @@ const uhr = document.querySelector(".clock");
 
 let hours = 0;
 let ampm = 0;
+// asdf;
 let second = 0;
 // debugger;
 
