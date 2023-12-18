@@ -41,9 +41,10 @@ function getClock(fullHour = true, autoConvert = false) {
 let test = (is24Hour = true, isAutoPadding = true) => {
   let padCheckPoint = (isAutoPadding_ = false, number, stroke, latter) =>
     isAutoPadding_ ? String(number).padStart(stroke, latter) : String(number);
-  let makeTimeOnSet = (is24Hour, hours, minutes, seconds) => {};
-  //! what the fuck is this
-  // * 사실 내가 뭘 해야 할 지도 모르곘어 지금 머리가 너무 명해
+  let makeTimeOnSet = (is24Hour, hours, minutes, seconds) => {
+    if (is24Hour);
+  };
+
   if (is24Hour) {
     // ? 24hour mode
     // TODO check isAutoPadding in conditional padCheckPoint()
@@ -77,6 +78,9 @@ function getClochWithMeridiem() {
   minutes = numberPad(minutes, 2, "0");
   seconds = date.getSeconds();
   seconds = numberPad(seconds, 2, "0");
+  // TODO 주석 색깔이 바귑니다
+  // ! 이건 확인해야 되겠죠?
+  // ? 여기는 무슨 소린지 모르겠는데요?
 
   uhr.innerHTML = `${ampm} ${hours}:${minutes}:${seconds}`;
   // console.log("cycle from ampm clock");
