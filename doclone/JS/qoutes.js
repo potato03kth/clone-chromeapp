@@ -44,6 +44,10 @@ const quotes = [
     auther: "법정",
   },
   {
+    quote: "고통,",
+    auther: "Roland",
+  },
+  {
     quote: "fuck you nvidia",
     auther: "linus Torvalds",
   },
